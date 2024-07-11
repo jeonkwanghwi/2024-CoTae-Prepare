@@ -1,7 +1,6 @@
-import queue
-queue = queue.Queue()
+from collections import deque
 
-queue.put(1) # push 1
-queue.put(2) # push 2
-
-print(queue.get()) # pop() -> FIFO구조이기 때문에 맨 앞의 원소가 삭제
+example = [1, 2, 3, 4, 5]
+dq = deque(example)
+dq.rotate(-2)  # 2라고 쓰면 양수이므로 시계방향으로 2번 회전한다.
+print(dq)
