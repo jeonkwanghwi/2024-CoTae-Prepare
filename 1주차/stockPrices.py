@@ -1,14 +1,14 @@
 def solution(prices):
     lst = []
     for i in range(len(prices)):
-        ans = 0
+        time = 0
         for j in range(i+1, len(prices)):
-            if prices[i] <= prices[j]:
-                ans += 1
-            else:
-                ans += 1
+            time += 1
+            if prices[i] > prices[j]:
                 break
-        lst.append(ans)
+        lst.append(time)
     return lst
 
 print(solution([1, 2, 3, 2, 3]))
+
+
