@@ -25,17 +25,16 @@ def DFS(x, y):
 for _ in range(int(input())):
     width, height, cabbages = map(int, input().split()) # 배추밭 가로, 배추밭 세로, 배추개수
     graph = [[0] * (height) for _ in range(width)]  # 배추밭 초기화
-    visited = [[0] * (height) for _ in range(width)]
     earthworm = 0  # 지렁이
 
     # 배추가 심어져 있는 곳 초기화
     for _ in range(cabbages):
         u, v = map(int, input().split())
         graph[u][v] = 1
-    #################################### 초기화 끝
+    # 초기화 끝
     for x in range(width):
         for y in range(height):
             if graph[x][y] == 1:
-                DFS(x, y)
                 earthworm += 1
+                DFS(x, y)
     print(earthworm)
