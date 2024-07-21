@@ -3,6 +3,9 @@ from collections import deque
 n, m, v = map(int, input().split()) # 정점, 간선, 탐색 시작할 정점의 번호
 graph = [[False] * (n + 1) for _ in range(n + 1)] # 그래프 선언
 
+dx = [0, 0, 1, -1] # x축 방향 이동
+dy = [1, -1, 0, 0] # y축 방향 이동
+
 # 주어진 정보로 정점간 연결하기 (문제에 주어진 그래프 초기화 하기)
 for _ in range(m):
     a, b = map(int, input().split())
