@@ -4,6 +4,8 @@ L, C = map(int, input().split())
 chars = sorted(input().split()) # 처음부터 오름차순으로 정렬함 (조건 1개를 바로 만족하게 만듦)
 vowels = set('aeiou') # 모음 집합
 
+# 모음은 1개만 있어도 됨.
+# 자음은 2개 이상
 def is_valid(pwd): # 자음, 모음 체크 함수
     if any(alpha in vowels for alpha in pwd) and len(set(pwd)-set(vowels)) >= 2:
         return True
